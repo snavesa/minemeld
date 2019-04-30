@@ -1,0 +1,23 @@
+author: snavesa
+description: Local prototype library managed via MineMeld WebUI
+prototypes:
+    snavesa_test:
+        class: minemeld.ft.csv.CSVFT
+        config:
+            attributes:
+                confidence: 100
+                share_level: green
+                type: IPv4
+            delimiter: '#'
+            fieldnames:
+            - indicator
+            interval: 30
+            source_name: snavesa_testdomainlist.ip
+            url: https://raw.githubusercontent.com/snavesa/minemeld/master/test_ipv4.txt
+        description: this just catches everything
+        development_status: EXPERIMENTAL
+        indicator_types:
+        - IPv4
+        node_type: miner
+        tags:
+        - ShareLevelGreen
