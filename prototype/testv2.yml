@@ -1,0 +1,56 @@
+url: https://github.com/snavesa/minemeld
+description: >
+    Test EDL for Cerner, prototype of ipv4 and URL
+
+prototypes:
+	Cern_IPv4:
+		author: snavesa
+    	development_status: EXPERIMENTAL
+    	description: test ipv4 ranges
+    	node_type: miner
+    	indicator_types:
+        	- IPv4
+    	tags:
+        	- ConfidenceHigh
+        	- ShareLevelGreen
+    	class: minemeld.ft.csv.CSVFT
+		config:
+			source_name: snavesa_testlist.ip
+			url: https://raw.githubusercontent.com/snavesa/minemeld/master/test_ipv4.txt
+			interval: 30
+			indicator: ip_prefix
+			fieldnames:
+				- indicator
+			age_out:
+				default: null
+				interval: 257
+				sudden_death: true
+			attributes:
+				confidence: 100
+				share_level: green
+				type: IPv4
+	Cern_URL:
+		author: snavesa
+    	development_status: EXPERIMENTAL
+    	description: test URL
+    	node_type: miner
+    	indicator_types:
+        	- URL
+        tags:
+        	-ConfidenceHigh
+        	-ShareLevelGreen
+        class: minemeld.ft.local.YamlURLFT
+        config:
+        	source_name: snavesa_testlitst.url
+        	url:  https://raw.githubusercontent.com/snavesa/minemeld/master/test_url.txt
+        	interval: 30
+        	indicator:
+        		regex: ^http.*
+        	age_out:
+				default: null
+				interval: 257
+				sudden_death: true
+			attributes:
+				confidence: 100
+				share_level: green
+				type: URL

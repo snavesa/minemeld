@@ -1,0 +1,2 @@
+http://lab-pan01.evanslab.local
+https://lab-pan01.evanslab.local
