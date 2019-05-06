@@ -24,25 +24,27 @@ prototypes:
         - ShareLevelGreen
 
     URL:
-        class: minemeld.ft.local.YamlURLFT
-        config:
-            source_name: snavesa_testlitst.url
-            url:  https://raw.githubusercontent.com/snavesa/minemeld/master/test_url.txt
-            interval: 30
-            indicator:
-                regex: ^http.*
-            age_out:
-                default: null
-                interval: 257
-                sudden_death: true
-            attributes:
-                confidence: 100
-                share_level: green
-                type: URL
-        description: test URL
-        development_status: EXPERIMENTAL
-        indicator_types:
-            - URL
-        node_type: miner
-        tags:
-        - ShareLevelGreen
+	class: minemeld.ft.http.HttpFT
+	config:
+	    source_name: snavesa_testlitst.url
+	    url:  https://raw.githubusercontent.com/snavesa/minemeld/master/test_url.txt
+	    interval: 30
+	    indicator:
+		regex: ^http.*
+	    ignore_regex: '^#'
+	    age_out:
+		default: null
+		interval: 257
+		sudden_death: true
+	    attributes:
+		confidence: 100
+		share_level: green
+		type: URL
+	    description: test URL
+	    development_status: EXPERIMENTAL
+	    indicator_types:
+		- URL
+	    node_type: miner
+	    tags:
+	    - ConfidenceHigh
+	    - ShareLevelGreen
