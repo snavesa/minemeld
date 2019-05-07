@@ -1,2 +1,2 @@
-http://lab-pan01.evanslab.local
-https://lab-pan01.evanslab.local
+http://www.reddit.com
+https://www.reddit.com
